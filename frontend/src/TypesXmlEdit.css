@@ -1,0 +1,11 @@
+.table-edit-field {
+    width: 60px;
+}
+
+.ant-table-tbody > tr > td {
+    padding: 8px 16px;
+}
+
+.ant-table-row {
+    height: 56px;
+}

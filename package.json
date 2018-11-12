@@ -1,0 +1,26 @@
+{
+  "name": "dayz-loot-table-editor",
+  "version": "1.0.0",
+  "description": "Tool that allows you to modify the loot tables of DayZ (specifically the types.xml file).",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisWeiss/dayz-loot-table-editor.git"
+  },
+  "keywords": [
+    "DayZ"
+  ],
+  "author": "Dennis Weiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennisWeiss/dayz-loot-table-editor/issues"
+  },
+  "homepage": "https://github.com/DennisWeiss/dayz-loot-table-editor#readme",
+  "devDependencies": {
+    "electron": "^3.0.8",
+    "react-scripts": "^2.1.1"
+  }
+}
