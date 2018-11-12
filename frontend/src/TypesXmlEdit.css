@@ -17,3 +17,12 @@
 .item-name-col {
     margin-right: 10px;
 }
+
+.column-title {
+    display: flex;
+    align-items: center;
+}
+
+.column-help {
+    margin: 5px;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table, Form, Input, Button, Popconfirm, Tag} from 'antd'
+import {Table, Form, Input, Icon, Tag, Tooltip} from 'antd'
 import './TypesXmlEdit.css'
 import {hashOfString} from './helper/helper-functions'
 
@@ -144,6 +144,20 @@ class EditableCell extends React.Component {
   }
 }
 
+const ColumnTitle = ({title, help}) => (
+  <div className='column-title'>
+    {title}
+    {
+      help && (
+        <div className='column-help'>
+          <Tooltip title={help}>
+            <Icon type='question-circle'/>
+          </Tooltip>
+        </div>
+      )
+    }
+  </div>
+)
 
 export default class TypesXmlEdit extends React.Component {
 
@@ -152,7 +166,7 @@ export default class TypesXmlEdit extends React.Component {
   }
 
   columns = [{
-    title: 'Item',
+    title: <ColumnTitle title='Item'/>,
     dataIndex: 'name',
     key: 'name',
     render: (text, record, index) => (
@@ -168,44 +182,44 @@ export default class TypesXmlEdit extends React.Component {
       </div>
     )
   }, {
-    title: 'Usages',
+    title: <ColumnTitle title='Usages'/>,
     dataIndex: 'usages',
     key: 'usages'
   }, {
-    title: 'Nominal',
+    title: <ColumnTitle title='Nominal' help='Specifies how many items should be on the entire map on average'/>,
     dataIndex: 'nominal',
     key: 'nominal',
     editable: true
   }, {
-    title: 'Lifetime',
+    title: <ColumnTitle title='Lifetime' help='In seconds - Specifies the time before an item abandoned on the ground gets deleted'/>,
     dataIndex: 'lifetime',
     key: 'lifetime',
     editable: true
   }, {
-    title: 'Restock',
+    title: <ColumnTitle title='Restock' help='In seconds - Specifies the time before an item is allowed to respawn'/>,
     dataIndex: 'restock',
     key: 'restock',
     editable: true
   }, {
-    title: 'Min. amount',
+    title: <ColumnTitle title='Min. amount' help='Specifies how many items there are at least on the entire map'/>,
     dataIndex: 'min',
     key: 'min',
     editable: true
   }, {
-    title: 'Quantity',
+    title: <ColumnTitle title='Quantity' help='Only for stackable types, like ammo'/>,
     children: [{
-      title: 'Min. quantity',
+      title: <ColumnTitle title='Min. quantity' />,
       dataIndex: 'quantmin',
       key: 'quantmin',
       editable: true
     }, {
-      title: 'Max. quantity',
+      title: <ColumnTitle title='Max. quantity' />,
       dataIndex: 'quantmax',
       key: 'quantmax',
       editable: true
     }]
   }, {
-    title: 'Cost',
+    title: <ColumnTitle title='Cost' help='Determines its value for players (This serves as priority during respawn and cleanup operations)'/>,
     dataIndex: 'cost',
     key: 'cost',
     editable: true
